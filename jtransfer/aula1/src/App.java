@@ -1,5 +1,6 @@
 import java.io.FileWriter; //Classe para escrever no arquivo
 import java.io.IOException; //Classe para tratar exceções no arquivo
+import java.nio.charset.Charset;
 import java.util.Scanner;
 
 
@@ -35,7 +36,7 @@ public class App {
                 meioTransporte = "Metro";
                 break;
             case 2: 
-            meioTransporte = "Onibûs";
+            meioTransporte = "Ônibus";
             break;
             case 3:
             meioTransporte = "Caminhada";
@@ -56,6 +57,16 @@ public class App {
         //Task no GitHub(Git e GitHub)
         System.out.println("Nome: " + nome + ", " +  "Transporte: " + meioTransporte);
 
+
+        try (FileWriter file = new FileWriter("dados.txt", true)){
+        
+           file.write(nome + ", " + meioTransporte + "\n");
+           System.out.println("Dados gravados com sucesso");
+            
+
+        } catch (IOException e) {
+           System.out.println("Erro ao gravar os dados" + e.getMessage());
+        }
 
 
      
