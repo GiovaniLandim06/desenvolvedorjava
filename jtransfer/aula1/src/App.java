@@ -1,6 +1,5 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.FileWriter; //Classe para escrever no arquivo
+import java.io.IOException; //Classe para tratar exceções no arquivo
 import java.util.Scanner;
 
 
